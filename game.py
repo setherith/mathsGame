@@ -1,11 +1,18 @@
 import random
+import time
 
+
+number_questions = 10
 
 def question(operator, operand_a, operand_b):
     """Build the question string"""
     return 'What is ' + str(operand_a) + ' ' + operator + ' ' + str(operand_b) + ' = ? '
 
-for attempts in range(1, 11):
+total_time = 0
+
+for attempts in range(1, number_questions + 1):
+
+    start_time = time.time()
 
     types_of_questions = ['-', '+', 'x', '÷']
 
@@ -46,3 +53,13 @@ for attempts in range(1, 11):
             print('Correct!')
         else:
             print('Wrong!')
+
+    end_time = time.time()
+    diff = round(end_time - start_time, 2)
+    total_time += diff
+    print(str(diff) + " seconds")
+
+total_time = round(total_time, 2)
+average = round(total_time / number_questions, 2)
+print("Total time taken: " + str(total_time))
+print("Average: " + str(average))
