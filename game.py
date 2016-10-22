@@ -1,8 +1,9 @@
 import random
 
-def question(operator, operandA, operandB):
+
+def question(operator, operand_a, operand_b):
     """Build the question string"""
-    return 'What is ' + str(operandA) + ' ' + operator + ' ' + str(operandB) + ' = ? '
+    return 'What is ' + str(operand_a) + ' ' + operator + ' ' + str(operand_b) + ' = ? '
 
 for attempts in range(1, 11):
 
@@ -36,6 +37,10 @@ for attempts in range(1, 11):
 
     if question_type == '÷':
         # Alt + 246 = '÷'
+        while (a / b) % 1 != 0:
+            a = random.randint(1, 12)
+            b = random.randint(1, 12)
+
         x = input(question('÷', a, b))
         if int(x) == a / b:
             print('Correct!')
