@@ -15,6 +15,7 @@ def question(operator, operand_a, operand_b):
     return 'What is ' + str(operand_a) + ' ' + operator + ' ' + str(operand_b) + ' = ? '
 
 total_time = 0
+score = 0
 
 for attempts in range(1, config.no_questions + 1):
 
@@ -30,6 +31,7 @@ for attempts in range(1, config.no_questions + 1):
         x = input(question('+', a, b))
         if int(x) == a + b:
             print('Correct!')
+            score += 1
         else:
             print('Wrong!')
 
@@ -37,6 +39,7 @@ for attempts in range(1, config.no_questions + 1):
         x = input(question('-', a, b))
         if int(x) == a - b:
             print('Correct!')
+            score += 1
         else:
             print('Wrong!')
 
@@ -44,6 +47,7 @@ for attempts in range(1, config.no_questions + 1):
         x = input(question('x', a, b))
         if int(x) == a * b:
             print('Correct!')
+            score += 1
         else:
             print('Wrong!')
 
@@ -56,6 +60,7 @@ for attempts in range(1, config.no_questions + 1):
         x = input(question('÷', a, b))
         if int(x) == a / b:
             print('Correct!')
+            score += 1
         else:
             print('Wrong!')
 
@@ -68,3 +73,4 @@ total_time = round(total_time, 2)
 average = round(total_time / config.no_questions, 2)
 print("Total time taken: " + str(total_time))
 print("Average: " + str(average))
+print("Score: " + str(score) + " (" + str(round(score / config.no_questions * 100, 2)) + "%)")
