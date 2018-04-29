@@ -1,9 +1,11 @@
 package domain;
 
+import java.io.Serializable;
+
 /**
  * @author setherith
  */
-public class Configuration {
+public class Configuration implements Serializable {
     
     public byte Operations;
     public int Limit;

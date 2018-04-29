@@ -21,4 +21,12 @@ public class UnitTests {
         assert(result != null);
         assert(result.Question.length() > 0);
     }
+    
+    @Test
+    public void ReadConfiguration() {
+        byte test = 0b1010;
+        
+        assert(test >> 1 == 1);
+        assert(test >> 2 == 0);
+    }
 }
