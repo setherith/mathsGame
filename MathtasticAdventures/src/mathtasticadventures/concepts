@@ -1,0 +1,10 @@
+config:
+
+store prefered operators such as + - / * as flags in a 4 bit word
+e.g. 0001 = additions only, 0011 = additions and substractions, 1001 = multiplication and addition only
+
+Therefore:
+            Addition = 1
+            Subtraction = 2
+            Division = 4
+            Multiplication = 8
