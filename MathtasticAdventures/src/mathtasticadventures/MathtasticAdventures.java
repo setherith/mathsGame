@@ -45,10 +45,14 @@ public class MathtasticAdventures {
     }
     
     private String AskQuestion(String question) {
-        try (Scanner reader = new Scanner(System.in)) {
-            System.out.println(question);
-            return reader.next();
+        String result = "";
+        Scanner reader = new Scanner(System.in);
+        System.out.println(question);
+        
+        while (result.length() == 0) {
+            result = reader.hasNext() ? reader.nextLine() : "";
         }
+        
+        return result;
     }
-    
 }
